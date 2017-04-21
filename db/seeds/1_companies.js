@@ -1,13 +1,61 @@
-
-exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+exports.seed = (knex) => {
+   return knex('companies').del()
+     .then(() => {
+       return knex('companies').insert([
+         {
+           id: 1,
+           name: '',
+           kind: '',
+           breed: '',
+           age: '',
+           description: '',
+           is_adopted: '',
+           image_url: ''
+         },
+         {
+           id: 2,
+           name: '',
+           kind: '',
+           breed: '',
+           age: '',
+           description: '',
+           is_adopted: '',
+           image_url: ''
+         },
+         {
+           id: 3,
+           name: '',
+           kind: '',
+           breed: '',
+           age: '',
+           description: '',
+           is_adopted: '',
+           image_url: ''
+         },
+         {
+           id: 5,
+           name: '',
+           kind: '',
+           breed: '',
+           age: '',
+           description: '',
+           is_adopted: '',
+           image_url: ''
+         },
+         {
+           id: 5,
+           name: '',
+           kind: '',
+           breed: '',
+           age: '',
+           description: '',
+           is_adopted: '',
+           image_url: ''
+         },
+       ])
+     }).then(() => {
+       return knex.raw(
+         "SELECT setval('companies_id_seq', (SELECT MAX(id) FROM companies));"
+       )
+     })
+ }
