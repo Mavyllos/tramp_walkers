@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
     development: {
         client: 'pg',
-        connection: 'postgres://localhost/tramp_walkers',
+        connection: 'postgres://localhost/tramp_walkers_dev',
         migrations: {
             directory: path.join(__dirname, 'db', 'migrations')
         },
