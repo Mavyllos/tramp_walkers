@@ -1,13 +1,11 @@
 exports.up = (knex) => {
 return knex.schema.createTable('companies', table => {
   table.increments()
-  table.text('image_url').notNullable()
-  table.string('name').notNullable()
-  table.string('kind').notNullable()
-  table.string('breed').notNullable()
-  table.integer('age').notNullable()
+  table.integer('walkers_id').notNullable()
+  table.varchar(60)('name').notNullable()
   table.string('description').notNullable()
-  table.boolean('is_adopted').notNullable()
+  table.bytea('logo_img').notNullable()
+  table.string('url').notNullable()
   table.timestamps(true, true)
   })
 }
