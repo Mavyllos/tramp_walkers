@@ -20,6 +20,7 @@ app.use('/', index);
 app.use('/companies', companies);
 app.use('/walkers', walkers);
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -35,7 +36,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json("error");
 });
 
 module.exports = app;
