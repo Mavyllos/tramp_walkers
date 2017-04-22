@@ -27,10 +27,6 @@ router.get('/:id', (req, res, next) => {
   })
 });
 
-// router.get('./id/edit', (req, res, next){
-//
-// })
-
 router.post('/', (req, res, next) => {
   var walker = {
     first_name: req.body.first_name,
